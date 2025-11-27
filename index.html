@@ -25,7 +25,11 @@
       <div id="unity-fullscreen-button"></div>
     </div>
   </div>
-  <div id="color-option">
+  <div id="option">
+    <label for="grid-size" id="grid-size-label">網格大小: <span>20</span></label>
+    <input type="range" name="grid-size" id="grid-size" value="20" min="0" max="1000" step="1">
+    <label for="grid-radius" id="grid-radius-label">網格半徑: <span>5</span></label>
+    <input type="range" name="grid-radius" id="grid-radius" value="5" min="0" max="1000" step="1">
     <label for="color" id="color-grid-picker-label">網格顏色</label>
     <input type="color" id="color-grid-picker" value="#ffffff">
     <label for="color" id="color-grid-size-picker-label">網格大小顏色</label>
@@ -127,8 +131,18 @@
           var color = e.target.value;
           unityInstance.SendMessage("Plane", "SetGridSizeColor", color);
         });
+        document.getElementById("grid-size").addEventListener("input", (e) => {
+          var size = e.target.value;
+          document.getElementById("grid-size-label").querySelector('span').textContent = size;
+          unityInstance.SendMessage("Plane", "SetGridSize", size);
+        });
+        document.getElementById("grid-radius").addEventListener("input", (e) => {
+          var size = e.target.value;
+          document.getElementById("grid-radius-label").querySelector('span').textContent = size;
+          unityInstance.SendMessage("Plane", "SetGridRadius", size);
+        });
         setTimeout(() => {
-          document.getElementById("color-option").style.display = "block";
+          document.getElementById("option").style.display = "block";
         }, 2200);
       }).catch((message) => {
         alert(message);

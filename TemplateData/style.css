@@ -79,7 +79,7 @@ body {
     display: none
 }
 
-#color-option {
+#option {
     display: none;
 }
 
@@ -108,4 +108,46 @@ body {
     position: fixed;
     top: 50px;
     right: 150px;
+}
+
+#grid-size-label {
+    position: fixed;
+    top: 75px;
+    right: 50px;
+    color: #fff;
+    z-index: 0;
+    writing-mode: vertical-lr;
+}
+
+#grid-size-label>span {
+    writing-mode: horizontal-tb;
+}
+
+#grid-size {
+    position: fixed;
+    top: 75px;
+    right: 70px;
+    height: 50%;
+    writing-mode: vertical-lr;
+}
+
+#grid-radius-label {
+    position: fixed;
+    top: 75px;
+    right: 100px;
+    color: #fff;
+    z-index: 0;
+    writing-mode: vertical-lr;
+}
+
+#grid-radius-label>span {
+    writing-mode: horizontal-tb;
+}
+
+#grid-radius {
+    position: fixed;
+    top: 75px;
+    right: 125px;
+    height: 50%;
+    writing-mode: vertical-lr;
 }
